@@ -1,0 +1,45 @@
+---
+title: "Statistical report"
+author: "Emilio L. Cano"
+date: "`r Sys.Date()`"
+output: pdf_document
+geometry: margin=0.5in
+    
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(palmerpenguins)
+library(tidyverse)
+library(gt)
+library(gtsummary)
+library(ggthemes)
+library(ggstatsplot)
+```
+
+## Scope
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+## Summary tables
+
+Consectetur adipiscing elit pellentesque habitant. Et tortor at risus viverra adipiscing. Id porta nibh venenatis cras sed felis eget velit aliquet. Blandit cursus risus at ultrices mi tempus imperdiet nulla. 
+
+```{r table, message=FALSE}
+penguins |> 
+  select(species, sex, body_mass_g) |> 
+  tbl_summary()
+```
+
+## Graphical summaries
+
+Sit amet cursus sit amet dictum sit amet justo donec. Neque vitae tempus quam pellentesque nec nam. Sed odio morbi quis commodo odio aenean sed. Ultricies leo integer malesuada nunc vel risus commodo viverra. 
+
+
+```{r plo, fig.width=8, heigh=4, out.width="80%", fig.align='center'}
+penguins |> 
+  ggbetweenstats(species, body_mass_g,
+                bf.message = FALSE )
+```
+
+

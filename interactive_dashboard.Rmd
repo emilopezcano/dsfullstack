@@ -1,0 +1,57 @@
+---
+title: "Interactive dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+library(flexdashboard)
+library(palmerpenguins)
+library(tidyverse)
+library(ggthemes)
+library(ggstatsplot)
+library(DT)
+library(plotly)
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Data table
+
+```{r table, message=FALSE}
+penguins |> 
+  datatable(filter = "top")
+```
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+
+
+### Comparisons
+
+```{r plo, fig.width=8, heigh=4, out.width="80%", fig.align='center'}
+penguins |> 
+  ggbetweenstats(species, body_mass_g,
+                bf.message = FALSE ) |> 
+  ggplotly()
+```
+
+
+### Densities
+
+```{r}
+p <- penguins |> 
+  ggplot(aes(body_mass_g, col = species, fill = species)) +
+  geom_density(alpha = 0.5) +
+  theme_solarized()
+  ggplotly(p)
+```
+
+
+

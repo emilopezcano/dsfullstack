@@ -1,0 +1,54 @@
+---
+title: "Static dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(palmerpenguins)
+library(tidyverse)
+library(ggthemes)
+library(gtsummary)
+library(ggstatsplot)
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Summary table
+
+```{r table, message=FALSE}
+penguins |> 
+  select(species, sex, body_mass_g) |> 
+  tbl_summary()
+```
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+
+
+### Comparisons
+
+```{r plo, fig.width=8, heigh=4, out.width="80%", fig.align='center'}
+penguins |> 
+  ggbetweenstats(species, body_mass_g,
+                bf.message = FALSE )
+```
+
+
+### Densities
+
+```{r}
+penguins |> 
+  ggplot(aes(body_mass_g, col = species, fill = species)) +
+  geom_density(alpha = 0.5) +
+  theme_solarized_2()
+```
+
+
+
