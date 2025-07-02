@@ -1,12 +1,12 @@
 ---
-title: "From Dashboards to Data Science Reactive Web Apps"
-subtitle: "Journey and Success Stories for Evidence-Based Decision Making in Industry and Business"
+title: "Ciencia de datos Full Stack: del laboratorio al producto comercializable"
+subtitle: "Jornada Campos Conectados: El futuro digital de la ganadería"
 author: "Emilio L. Cano"
 institute: "Data Science Laboratory, Universidad Rey Juan Carlos"
 format: 
   revealjs:
     theme: [solarized, congresos.scss]
-    footer: "ENBIS 2023 conference, September 10th-14th, Valencia"
+    footer: "Jornada Campos Conectados, Universidad de Vigo, ESII Ourense"
     logo: img/DSLab_logo.png
     menu:
       numbers: false
@@ -230,33 +230,22 @@ shinyApp(ui = ui, server = server)
 
 🖥️ Live demo 🤞🏻
 
+# Development and implementation
+
+## FOSS as competitive advantage
+
+* R is Free and Open Source Software
+
+* Free as in free beer and free as in free speech
+
+* Programming language
+
+* Designed for data analysis
+
+* Easy version control, CI/CD
 
 
-## Adding nice features
-
-:::: {.columns}
-
-::: {.column}
-
-### Dashboards
-
-* [shinydashboard](https://rstudio.github.io/shinydashboard/)
-
-* [bs4dash](https://rinterface.github.io/bs4Dash/index.html)
-
-* [bslib](https://rstudio.github.io/bslib/)
-
-### Configuration
-
-* [Multilanguage]{.red} apps with [shiny.i18n](https://appsilon.github.io/shiny.i18n/index.html)
-
-* [config](https://rstudio.github.io/config/index.html)
-
-:::
-
-::: {.column}
-
-### Software Eng. good practices
+## Software Eng. good practices
 
 * Package versions with [renv](https://rstudio.github.io/renv/index.html)
 
@@ -266,41 +255,177 @@ shinyApp(ui = ui, server = server)
 
 * [Deployment as Docker container](https://hosting.analythium.io/running-shiny-server-in-docker/)
 
+## Microservices
+
+* Deployment via Docker containers
+
+* Orchestated (if needed) via docker compose (among others)
+
+* Easily portable and scalable
+
+* Alternative: Posit cloud services
+
+## Databases
+
+* Independent container
+
+* SQL and NoSQL
+
+* Seamless integration
+
+* Importance of the data model
+
+* Automation: data updates, backups, scheduled or trigger actions
+
+* Open data: the potential we must harness.
+
+
+## Advanced analytics
+
+* Interactive visualization
+
+* Explainable Machine Learning models
+
+* Artificial intelligence models, including LLMs
+
+* Simulation (digital twins, ...)
+
+## Ready-to-use data products
+
+* For private and public sector
+
+* Applied to vried domain
+
+* Several business models
+
+* Automatic reporting
+
+
+# Success stories
+
+
+
+
+
+## EVASTUR - Dashboard
+
+![](img/evastur.png){width="70%" fig-align="center"}
+
+
+::: {style="text-align:center"}
+🖥️ Live demo 🤞🏻
 :::
 
-::::
 
-# UN ECA Dashboard
 
-## AfCIOT - TiVA indicators
+## OBEPE
 
-* Joint project with [UNECA](https://www.uneca.org), [WTO](https://www.wto.org), and [OECD](https://www.oecd.org)
+![](img/obepe.png){width="70%" fig-align="center"}
 
-* International Trade, Environmental and Employment Indicators
+[Acknowledgements:]{.ack} 
+![](img/logo_idb.png){height="50"}
+![](img/logo_epe_colors.jpg){height="50"} 
+![](img/logo_mme.png){height="50"}
 
-* International and multidisciplinar team
+::: {style="text-align:center"}
+🖥️ Live demo 🤞🏻[public link](https://dashboard.epe.gov.br/apps/OBEPE/)
+:::
 
-* Industry and product classification, gap estimation, policy simulation and [visualisation]{.red}
+## Analítica deportiva
+  
+  ![](img/pace.png)
 
-* Key result: A [shiny app]{.red} for reporting, visualisation and policy simulation
+## Proyectos de investigación: DICYME
 
-* Several important challenges for the [multinational]{.red} scope
+
+* Dynamic Industrial Cyber Risk Modelling based on Evidence (DICYME) research project (CPP2021-009025)
+
+
+* Proyecto de colaboración público-privada con DeNexus TECH SL.
+
+* Dashboard (no publicado aún)
+
+* Conexión con MongoDB
+
+* App relacionada: [CRAS](http://gondor.etsii.urjc.es:3804/)
+
+## Aplicación shiny CRAS
+
+* Análisis de riesgos
+
+* Primer paso: se simulan los eventos en n años
+
+* Segundo paso: se simula el gasto de cada evento
+
+## Resultados
+
+![](img/3_results_density.png)
+
+
+
+
+
+
+
 
 ## AfCIOT - TiVA indicators
 
 ![](img/afciot.png){width="70%" fig-align="center"}
 
-[Acknowledgements:]{.ack} 
-![](img/uneca.png){height="50"}
-![](img/wto.png){height="50"}
-![](img/oecd.png){height="50"}
+[Acknowledgements:]{.ack} ![](img/uneca.png){height="50"}
+![](img/wto.png){height="50"} ![](img/oecd.png){height="50"}
 
-# Multilanguage implementation
+::: {style="text-align:center"}
+🖥️ Live demo 🤞🏻
+:::
 
-## {shiny.i18n}
+## Síagro - Animal production SPC
+
+::: columns
+::: {.column width="40%"}
+-   [CRO clinical and nutritional trials](http://www.testsandtrials.com)
+-   Shiny app for their customers as a value added service
+-   Important \[**productivity improvements**\]
+-   Simulation and parameterised reports
+:::
+
+::: {.column width="60%"}
+![](img/testsapp.png)
+
+<img src="img/tests.png" style="width:50%;margin-left:auto;margin-right:auto;display:block;"/>
+
+::: small
+<https://www.siagro.es> \| 🖥️ Live demo 🤞🏻
+:::
+:::
+:::
 
 
 
+## Smart Cities
+
+-   Use cases for Tourism, Healthcare, and Infrastructures in Madrid
+    Region
+
+-   Coherent step-by-step apps for the use cases (load data -
+    visualisation - modelling - getting results)
+
+-   Some use cases with [Shiny]{.red}, other with Python or Power BI
+
+-   Example: <http://www.citizenlabhub.es/cu/55>
+
+
+## IMASDE Agroalimentaria
+
+* <https://e-imasde.eu/language/es/home/>
+
+
+* I+D+i automated reports
+
+
+::: {style="text-align:center"}
+![](img/imasde.png){width=400px}
+:::
 
 # Questions? 
 
@@ -311,14 +436,11 @@ shinyApp(ui = ui, server = server)
 
 [emilio.lopez@urjc.es]{.red}
 
-Slides: [emilio.lcano.com/p/enbis2023](http://emilio.lcano.com/p/enbis2023/#/title-slide)
+<!-- Slides: [emilio.lcano.com/p/enbis2023](http://emilio.lcano.com/p/enbis2023/#/title-slide) -->
 
 \
 
 Thanks for your attention
 
-:::{style="text-align:center"}
-🖥️ Live demo 🤞🏻
-:::
 
 
